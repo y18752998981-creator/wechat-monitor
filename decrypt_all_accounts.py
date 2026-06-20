@@ -12,8 +12,8 @@ import sys, os, io, json, subprocess
 if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
-sys.path.insert(0, r"C:\Users\y1875\Desktop\wechat-monitor")
-os.chdir(r"C:\Users\y1875\Desktop\wechat-monitor")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 import config
 
@@ -21,7 +21,7 @@ WECHAT_DECRYPT = config.WECHAT_DECRYPT_PATH
 XWECHAT_FILES = config.WECHAT_ACCOUNTS_DIR
 
 # Find a working Python
-PYTHON_EXE = r"C:\Users\y1875\AppData\Local\Programs\Python\Python311\python.exe"
+PYTHON_EXE = sys.executable  # 使用当前 Python 解释器
 
 print("=" * 60)
 print("  微信多账号解密工具")

@@ -35,12 +35,12 @@ def bot_debug(msg):
 # ============================================================
 # wechat-decrypt 自动刷新
 # ============================================================
-WECHAT_DECRYPT_DIR = getattr(config, "WECHAT_DECRYPT_PATH", r"C:\Users\y1875\wechat-decrypt")
+WECHAT_DECRYPT_DIR = getattr(config, "WECHAT_DECRYPT_PATH", os.path.join(os.path.expanduser("~"), "wechat-decrypt"))
 
 # 硬编码使用 venv 里的 Python（避免系统 PATH 不一致导致找不到依赖）
 # desktop_app 是用 venv pythonw.exe 启动的，但有时 subprocess 会 fallback 到 system Python
-HERMES_VENV_PYTHON = r"C:\Users\y1875\AppData\Local\hermes\hermes-agent\venv\Scripts\python.exe"
-SYSTEM_PYTHON = r"C:\Users\y1875\AppData\Local\Programs\Python\Python311\python.exe"
+HERMES_VENV_PYTHON = os.path.join(os.path.expanduser("~"), "AppData", "Local", "hermes", "hermes-agent", "venv", "Scripts", "python.exe")
+SYSTEM_PYTHON = sys.executable  # 当前 Python 解释器（兼容默认安装）
 
 def _find_working_python():
     """找一个能 import Crypto 的 Python 解释器"""
