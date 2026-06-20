@@ -36,6 +36,21 @@ WECHAT_DECRYPT_EXPORT_DIR = os.path.join(WECHAT_DECRYPT_PATH, "exports")
 # 旧版兼容路径
 WX_EXPORT_DIR = os.path.join(EXPORTS_DIR, "wx_messages")
 
+
+# ===== 多微信账号配置（可选） ===== <<<
+# 自动扫描本机所有已登录过的微信号，每个账号独立解密、独立监控
+# 不需要多账号监控就保持空列表: WECHAT_ACCOUNTS = []
+WECHAT_ACCOUNTS_DIR = r"C:\Users\你的用户名\Documents\xwechat_files"  # <<< 微信账号数据根目录
+WECHAT_ACCOUNTS = [
+    # {
+    #     "name": "你的微信号（用于日志显示）",
+    #     "account_dir": r"C:\Users\你的用户名\Documents\xwechat_files\你的微信号_xxx",
+    #     "db_dir": r"...\db_storage",
+    #     "keys_file": r"<wechat-decrypt目录>\keys_你的微信号.json",
+    #     "decrypted_dir": r"<wechat-decrypt目录>\decrypted_你的微信号",
+    # },
+    # 添加更多账号按同样格式追加...
+]
 # ===== 扫描频率配置 =====
 # 工作时段（每N分钟扫一次）
 BUSY_HOURS_START = 8   # 早上8点

@@ -10,6 +10,8 @@
 - 每晚 22:00 自动生成当日汇总日报
 - Telegram Bot 交互式搜索（发关键词即可查微信记录）
 - 桌面端应用（支持 DeepSeek AI 智能分析）
+- 支持多微信账号同时监控（编辑 `config.py` 中的 `WECHAT_ACCOUNTS` 列表）
+
 
 ## 环境要求
 
